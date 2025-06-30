@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import LocalMobile from "./components/LocaMobile";
+import { DetailCity } from "./components/DetailCity";
 
 export default function App() {
   return (
@@ -9,6 +10,9 @@ export default function App() {
       <StatusBar style="auto" />
       <View>
         <LocalMobile />
+      </View>
+      <View>
+        <DetailCity />
       </View>
     </View>
   );
