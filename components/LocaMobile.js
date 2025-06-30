@@ -1,9 +1,8 @@
-// components/LocationComponent.js
 import React, { useEffect, useState } from "react";
-import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
+import { Text, ActivityIndicator, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 
-export default function LocalMobile() {
+export default function LocalMobile({ onLocation }) {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -18,6 +17,9 @@ export default function LocalMobile() {
 
       let loc = await Location.getCurrentPositionAsync({});
       setLocation(loc);
+      if (onLocation) {
+        onLocation(loc.coords.latitude, loc.coords.longitude);
+      }
     })();
   }, []);
 
@@ -29,12 +31,13 @@ export default function LocalMobile() {
     return <ActivityIndicator size="large" />;
   }
 
-  return (
-    <View style={styles.container}>
-      <Text>Latitude : {location.coords.latitude}</Text>
-      <Text>Longitude : {location.coords.longitude}</Text>
-    </View>
-  );
+  return null;
+  // (
+  //   <View style={styles.container}>
+  //     <Text>Latitude : {location.coords.latitude}</Text>
+  //     <Text>Longitude : {location.coords.longitude}</Text>
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
