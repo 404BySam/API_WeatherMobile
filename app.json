@@ -10,7 +10,16 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "plugins": [
+        [
+          "expo-location",
+          {
+            "locationAlwaysAndWhenInUsePermission": "Nous avons besoin de votre localisation",
+            "locationWhenInUsePermission": "Nous avons besoin de votre localisation"
+          }
+        ]
+      ]
     },
     "ios": {
       "supportsTablet": true
