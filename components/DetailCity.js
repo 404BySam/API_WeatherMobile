@@ -16,6 +16,7 @@ export function DetailCity({ latitude, longitude }) {
     )
       .then((response) => response.json())
       .then((data) => setWeather(data));
+    // .then((isLoading) => setIsLoading(!isLoading));
   }, [latitude, longitude]);
 
   if (!weather) return <ActivityIndicator />;
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     height: 180,
     borderRadius: 18,
     marginTop: 12,
-    borderColor: "#0077b6",
+    borderColor: "black",
     borderWidth: 2,
   },
 });

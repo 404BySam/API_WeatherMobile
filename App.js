@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import LocalMobile from "./components/LocaMobile";
 import React, { useEffect, useState } from "react";
 import { DetailCity } from "./components/DetailCity";
+import { PrediCity } from "./components/PrediCity";
 
 export default function App() {
   const [coords, setCoords] = useState({ latitude: null, longitude: null });
@@ -14,7 +15,10 @@ export default function App() {
       />
 
       {coords.latitude && coords.longitude && (
-        <DetailCity latitude={coords.latitude} longitude={coords.longitude} />
+        <>
+          <DetailCity latitude={coords.latitude} longitude={coords.longitude} />
+          <PrediCity latitude={coords.latitude} longitude={coords.longitude} />
+        </>
       )}
       <StatusBar style="auto" />
     </View>
