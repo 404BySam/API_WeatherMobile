@@ -44,5 +44,13 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
+    marginVertical: 24,
+  },
+  error: {
+    fontSize: 18,
+    color: "#e11d48",
+    fontWeight: "bold",
+    marginTop: 10,
+    textAlign: "center",
   },
 });
